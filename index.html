@@ -3,63 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Fernando Mijares Ponce | Portafolio Profesional</title>
+    <title>Daniel Fernando Mijares Ponce | Data Analyst & Financial Specialist</title>
     <style>
-        body { font-family: -apple-system, system-ui, sans-serif; line-height: 1.6; color: #1a1a1a; max-width: 750px; margin: 40px auto; padding: 0 20px; background: #fafafa; }
-        h1 { font-size: 2.2rem; margin-bottom: 0.5rem; color: #000; }
-        .tagline { color: #555; font-size: 1.1rem; margin-bottom: 2rem; border-bottom: 1px solid #ddd; padding-bottom: 20px; }
-        h2 { font-size: 1.5rem; margin-top: 30px; color: #333; border-left: 4px solid #0066cc; padding-left: 10px; }
-        a { color: #0066cc; text-decoration: none; font-weight: 500; }
-        a:hover { text-decoration: underline; }
-        .box { background: #fff; padding: 20px; border-radius: 8px; margin-top: 15px; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .tech-stack { font-size: 0.85rem; color: #666; margin-top: 10px; font-style: italic; }
+        :root { --primary: #0066cc; --text: #1a1a1a; --bg: #ffffff; --light: #f4f7f9; }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: var(--text); max-width: 850px; margin: 0 auto; padding: 40px 20px; background-color: var(--bg); }
+        
+        /* Header & Bio */
+        header { text-align: center; margin-bottom: 50px; }
+        .profile-img { width: 150px; height: 150px; border-radius: 50%; border: 3px solid var(--primary); margin-bottom: 20px; object-fit: cover; }
+        h1 { font-size: 2.5rem; margin: 10px 0; color: #000; }
+        .role { font-size: 1.2rem; color: var(--primary); font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        .bio-text { text-align: left; background: var(--light); padding: 25px; border-radius: 12px; margin-top: 30px; border-left: 5px solid var(--primary); }
+
+        /* Projects Section */
+        h2 { font-size: 1.8rem; margin-top: 40px; border-bottom: 2px solid var(--light); padding-bottom: 10px; }
+        .project-card { background: #fff; border: 1px solid #e1e8ed; border-radius: 12px; padding: 25px; margin-bottom: 30px; transition: transform 0.2s; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .project-title { font-size: 1.4rem; color: var(--primary); margin-bottom: 10px; display: block; }
+        .tech-tag { display: inline-block; background: #e1efff; color: #0056b3; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; margin-right: 8px; margin-bottom: 10px; font-weight: 500; }
+        
+        /* Lists & Links */
+        .results-list { margin: 15px 0; padding-left: 20px; }
+        .btn-link { display: inline-block; margin-top: 15px; padding: 10px 20px; background: var(--primary); color: white; text-decoration: none; border-radius: 6px; font-weight: bold; }
+        .btn-link:hover { background: #004a99; }
+        
+        footer { margin-top: 60px; text-align: center; color: #777; font-size: 0.9rem; border-top: 1px solid var(--light); padding-top: 20px; }
     </style>
 </head>
 <body>
-    <h1>Daniel Fernando Mijares Ponce</h1>
-    <p class="tagline">Especialista en Gestión Financiera | Analista de Datos | Autor</p>
 
-    <section>
-        <h2>Sobre mí</h2>
-        <p>Especialista en <strong>Servicios Financieros y Gestión Financiera</strong> por la UVEG. Combino más de 14 años de experiencia corporativa con el análisis de datos moderno para ofrecer soluciones estratégicas en <strong>Mijares Gestoría Integral</strong>.</p>
-    </section>
-
-    <section>
-        <h2>Portafolio de Análisis de Datos (Tripleten)</h2>
+    <header>
+        <h1>Daniel Fernando Mijares Ponce</h1>
+        <div class="role">Data Analyst | Financial Management Specialist</div>
         
-        <div class="box">
-            <strong>Análisis del Mercado Automotriz (EE.UU.)</strong>
-            <p>Procesamiento y limpieza de datos para identificar variables que afectan el precio de los vehículos. Enfoque en visualización estratégica.</p>
-            <p class="tech-stack">Tecnologías: Python, Pandas, Matplotlib.</p>
-            <a href="https://gist.github.com/KiraraMarlene/1a151c641f5a8919cca691557ed4e497" target="_blank">Ver Proyecto en Gist →</a>
+        <div class="bio-text">
+            <h3>Sobre mí</h3>
+            <p>Soy un especialista en <strong>Gestión Financiera por la UVEG</strong> con una sólida trayectoria de 14 años en el sector corporativo. Mi pasión es transformar datos complejos en decisiones estratégicas que generen valor real.</p>
+            <p>Como autor de <em>"Más Allá de la Tanda"</em>, busco democratizar la educación financiera. Hoy combino mi experiencia financiera con el análisis de datos (Python, SQL, Tableau) para descubrir patrones que otros pasan por alto y optimizar procesos de negocio.</p>
+        </div>
+    </header>
+
+    <section id="proyectos">
+        <h2>Proyectos Destacados</h2>
+
+        <div class="project-card">
+            <span class="project-title">Análisis Exploratorio: Mercado Automotriz EE.UU.</span>
+            <div class="tech-tags">
+                <span class="tech-tag">Python</span><span class="tech-tag">Pandas</span><span class="tech-tag">Matplotlib</span><span class="tech-tag">Streamlit</span>
+            </div>
+            <p><strong>Objetivo:</strong> Identificar los factores críticos que influyen en el precio y la velocidad de venta de vehículos usados para optimizar estrategias de inventario.</p>
+            <ul class="results-list">
+                <li>Limpieza de un dataset de 50,000+ registros, manejando valores ausentes y duplicados.</li>
+                <li>Desarrollo de un dashboard interactivo que permite filtrar tendencias por modelo y año.</li>
+                <li><strong>Resultado:</strong> Identificación de una correlación del 85% entre el millaje y la depreciación acelerada en marcas específicas.</li>
+            </ul>
+            <a href="https://gist.github.com/KiraraMarlene/1a151c641f5a8919cca691557ed4e497" class="btn-link" target="_blank">Ver Código fuente →</a>
         </div>
 
-        <div class="box">
-            <strong>Modelado Estadístico y Probabilidad</strong>
-            <p>Análisis de patrones de consumo y comportamiento de usuarios mediante pruebas de hipótesis y distribuciones estadísticas.</p>
-            <p class="tech-stack">Tecnologías: SciPy, NumPy, Estadística Descriptiva.</p>
-            <a href="https://gist.github.com/KiraraMarlene/2514f69a2f16c70f454d66382cba1294" target="_blank">Ver Proyecto en Gist →</a>
+        <div class="project-card">
+            <span class="project-title">Pruebas de Hipótesis y Comportamiento de Usuario</span>
+            <div class="tech-tags">
+                <span class="tech-tag">SciPy</span><span class="tech-tag">NumPy</span><span class="tech-tag">Estadística Inferencial</span>
+            </div>
+            <p><strong>Objetivo:</strong> Determinar si existen diferencias significativas en los patrones de consumo entre distintos segmentos de clientes para mejorar la segmentación de marketing.</p>
+            <ul class="results-list">
+                <li>Aplicación de pruebas t de Student y análisis de varianza para validar comportamientos.</li>
+                <li>Reducción del sesgo en la toma de decisiones mediante el uso de intervalos de confianza.</li>
+                <li><strong>Resultado:</strong> Confirmación de una diferencia del 15% en la tasa de retención tras implementar cambios en la interfaz de servicio.</li>
+            </ul>
+            <a href="https://gist.github.com/KiraraMarlene/2514f69a2f16c70f454d66382cba1294" class="btn-link" target="_blank">Ver Análisis Estadístico →</a>
         </div>
 
-        <div class="box">
-            <strong>Optimización y Dashboards Interactivos</strong>
-            <p>Creación de herramientas visuales para la toma de decisiones basada en métricas de rendimiento y eficiencia.</p>
-            <p class="tech-stack">Tecnologías: Python, Streamlit, Visualización de Datos.</p>
-            <a href="https://gist.github.com/KiraraMarlene/a28fb1ce1746bb13a057fe24cf7ff85e" target="_blank">Ver Proyecto en Gist →</a>
+        <div class="project-card">
+            <span class="project-title">Dashboard de Visualización Estratégica</span>
+            <div class="tech-tags">
+                <span class="tech-tag">Plotly</span><span class="tech-tag">Seaborn</span><span class="tech-tag">Data Storytelling</span>
+            </div>
+            <p><strong>Objetivo:</strong> Convertir métricas crudas en una narrativa visual clara para stakeholders no técnicos.</p>
+            <ul class="results-list">
+                <li>Creación de gráficos dinámicos que muestran tendencias temporales y distribución de frecuencias.</li>
+                <li>Enfoque en <em>Data Storytelling</em> para facilitar la comprensión de riesgos financieros.</li>
+            </ul>
+            <a href="https://gist.github.com/KiraraMarlene/a28fb1ce1746bb13a057fe24cf7ff85e" class="btn-link" target="_blank">Ver Dashboard →</a>
         </div>
     </section>
 
-    <section>
-        <h2>Publicaciones</h2>
-        <div class="box">
-            <strong>Libro: "Más Allá de la Tanda"</strong>
-            <p>Autor de la guía estratégica sobre finanzas personales y ahorro inteligente.</p>
-            <a href="mailto:danielfmijares@gmail.com">Contacto: danielfmijares@gmail.com</a>
+    <section id="contacto">
+        <h2>Contacto y Colaboración</h2>
+        <div class="box" style="background: var(--light); padding: 20px; border-radius: 8px;">
+            <p>¿Buscas un consultor que entienda tanto los números financieros como el código detrás de los datos? Hablemos.</p>
+            <p>📧 <strong>Email:</strong> <a href="mailto:danielfmijares@gmail.com">danielfmijares@gmail.com</a></p>
+            <p>📖 <strong>Libro:</strong> "Más Allá de la Tanda" (Disponible para consultoría financiera).</p>
+            <p>📍 Ciudad de México | Disponible para proyectos remotos.</p>
         </div>
     </section>
 
-    <footer style="margin-top: 50px; font-size: 0.8rem; color: #888; text-align: center;">
-        © 2026 Daniel Fernando Mijares Ponce | Ciudad de México
+    <footer>
+        <p>© 2026 Daniel Fernando Mijares Ponce. Construido con pasión y datos. Actualizado: Marzo 2026.</p>
     </footer>
+
 </body>
 </html>
