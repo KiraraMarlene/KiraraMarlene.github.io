@@ -3,101 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Fernando Mijares Ponce | Data Scientist & Financial Expert</title>
+    <title>Daniel Fernando Mijares | Data & Operations</title>
     <style>
-        :root { --primary: #0066cc; --accent: #28a745; --text: #1a1a1a; --bg: #ffffff; --light: #f8f9fa; }
-        body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; color: var(--text); max-width: 850px; margin: 0 auto; padding: 40px 20px; background: var(--bg); }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
         
-        header { text-align: center; margin-bottom: 50px; }
-        h1 { font-size: 2.5rem; margin-bottom: 5px; color: #000; }
-        .role { font-size: 1.2rem; color: var(--primary); font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        :root { 
+            --primary: #00f2fe; 
+            --secondary: #4facfe; 
+            --text-main: #ffffff; 
+            --text-muted: #cbd5e1;
+            --accent: #10b981;
+            --glass-bg: rgba(15, 23, 42, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
         
-        .bio-section { background: var(--light); padding: 30px; border-radius: 15px; border-left: 6px solid var(--primary); margin: 30px 0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         
-        h2 { font-size: 1.8rem; margin-top: 40px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .project-card { background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 25px; margin-bottom: 25px; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
-        .project-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.08); transform: translateY(-3px); }
-        .project-title { font-size: 1.4rem; color: var(--primary); font-weight: bold; display: block; margin-bottom: 10px; }
-        
-        .tech-tag { display: inline-block; background: #e7f3ff; color: #007bff; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; margin: 5px 5px 15px 0; font-weight: 600; }
-        .results { background: #f0fff4; border-radius: 8px; padding: 15px; margin: 15px 0; font-size: 0.95rem; border: 1px dashed var(--accent); color: #155724; }
-        
-        .btn { display: inline-block; padding: 12px 25px; background: var(--primary); color: white; text-decoration: none; border-radius: 6px; font-weight: 600; margin: 10px 10px 0 0; font-size: 0.9rem; transition: background 0.2s; }
-        .btn:hover { background: #004a99; }
-        .btn-alt { background: #333; }
-        .btn-alt:hover { background: #000; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: var(--text-main); 
+            background: #020617; /* Fallback color */
+            overflow-x: hidden;
+        }
 
-        .contact-box { background: #1a1a1a; color: white; padding: 30px; border-radius: 15px; margin-top: 40px; text-align: center; }
-        .contact-box a { color: #5fb2ff; text-decoration: none; font-weight: bold; }
+        /* --- VIDEO BACKGROUND --- */
+        .video-bg {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -2;
+            object-fit: cover;
+            opacity: 0.4; /* Oscurecemos el video para que el texto resalte */
+        }
+        .bg-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, #020617 100%);
+            z-index: -1;
+        }
+        
+        .container { max-width: 1000px; margin: 0 auto; padding: 80px 20px; position: relative; z-index: 1; }
+        
+        /* Hero Section */
+        header { text-align: left; margin-bottom: 70px; }
+        h1 { font-size: 4rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+        h1 span { background: -webkit-linear-gradient(0deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-subtitle { font-size: 1.3rem; color: var(--text-muted); font-weight: 300; max-width: 750px; margin-bottom: 40px; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+        
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transition: transform 0.4s ease, border-color 0.4s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 242, 254, 0.4);
+        }
+
+        .uvp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 80px; }
+        .uvp-card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.2rem; }
+
+        h2 { font-size: 2.5rem; margin-bottom: 40px; font-weight: 800; text-align: center; }
+        
+        /* Projects with Visual Layout */
+        .project-card { margin-bottom: 40px; padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+        
+        /* Área para Imagen/Video del Proyecto */
+        .project-visual {
+            width: 100%;
+            height: 250px;
+            background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop') center/cover;
+            border-bottom: 1px solid var(--glass-border);
+            position: relative;
+        }
+        /* Cambia las imágenes de los otros proyectos con distintas URLs */
+        .visual-2 { background-image: url('https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=1974&auto=format&fit=crop'); }
+        .visual-3 { background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1470&auto=format&fit=crop'); }
+
+        .project-content { padding: 35px; }
+        .project-title { font-size: 1.8rem; color: #fff; font-weight: 800; display: block; margin-bottom: 15px; }
+        
+        .tech-tags { margin-bottom: 25px; }
+        .tech-tag { display: inline-block; background: rgba(79, 172, 254, 0.15); color: var(--primary); padding: 8px 16px; border-radius: 30px; font-size: 0.8rem; margin: 0 10px 10px 0; font-weight: 600; border: 1px solid rgba(0, 242, 254, 0.3); }
+        
+        .impact-box { background: rgba(16, 185, 129, 0.1); border-left: 4px solid var(--accent); padding: 20px; margin: 25px 0; font-size: 1.05rem; border-radius: 0 12px 12px 0; }
+        
+        /* Buttons */
+        .btn-group { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; background: transparent; color: white; text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 1rem; transition: all 0.3s; border: 1px solid rgba(255,255,255,0.3); cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
+        .btn-primary { background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%); border: none; color: #000; font-weight: 800; box-shadow: 0 10px 20px rgba(0, 242, 254, 0.3); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(0, 242, 254, 0.5); }
+        .btn:hover:not(.btn-primary) { background: rgba(255,255,255,0.1); border-color: #fff; transform: translateY(-3px); }
+
+        /* Author Section */
+        .author-section { margin-top: 80px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
+        .author-content { flex: 1; min-width: 300px; }
+        .author-content h3 { font-size: 2.2rem; margin-bottom: 15px; background: -webkit-linear-gradient(0deg, #f59e0b, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* Elemento Visual del Libro */
+        .book-visual { flex: 0.5; min-width: 250px; height: 300px; background: url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2112&auto=format&fit=crop') center/cover; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); border: 1px solid var(--glass-border); }
+
+        footer { text-align: center; margin-top: 100px; padding-top: 40px; border-top: 1px solid var(--glass-border); color: var(--text-muted); }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Daniel Fernando Mijares Ponce</h1>
-        <div class="role">Data Scientist | Especialista en Gestión Financiera</div>
-    </header>
+    <video autoplay loop muted playsinline class="video-bg">
+        <source src="https://player.vimeo.com/external/311651811.sd.mp4?s=d00922f51eb9996d744b1c5a9ddf571b002c9167&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
+    </video>
+    <div class="bg-overlay"></div>
 
-    <section class="bio-section">
-        <h3>Perfil Profesional</h3>
-        <p>Egresado en <strong>Gestión Financiera por la UVEG</strong> y formado como <strong>Científico de Datos en Tripleten</strong>. Mi trayectoria une la precisión del análisis financiero con el poder predictivo del Machine Learning.</p>
-        <p>Me especializo en extraer valor de los datos para resolver problemas críticos de negocio, desde la optimización logística hasta la protección de datos personales mediante algoritmos avanzados. Mi objetivo es convertir la información en una ventaja competitiva medible.</p>
-        <div style="margin-top: 20px;">
-            <a href="https://www.linkedin.com/in/danielmijaresponce/" target="_blank" class="btn">LinkedIn Profesional</a>
-            <a href="https://a.co/d/0bPQi97X" target="_blank" class="btn btn-alt">Mi Libro en Amazon</a>
-        </div>
-    </section>
-
-    <section>
-        <h2>Proyectos Destacados (Ciencia de Datos)</h2>
-
-        <div class="project-card">
-            <span class="project-title">Predicción de Demanda: Sweet Lift Taxi</span>
-            <div class="tech-tags">
-                <span class="tech-tag">Time Series</span><span class="tech-tag">LightGBM</span><span class="tech-tag">Analítica Predictiva</span>
+    <div class="container">
+        <header>
+            <h1>Estratega de Datos <span>& Operaciones</span></h1>
+            <p class="hero-subtitle">Soy Daniel Mijares. Transformo la complejidad logística y financiera en rentabilidad medible mediante algoritmos predictivos y más de 15 años de liderazgo corporativo.</p>
+            <div class="btn-group">
+                <a href="mailto:danielfmijares@gmail.com" class="btn btn-primary">Iniciar Proyecto</a>
+                <a href="https://www.linkedin.com/in/danielmijaresponce/" target="_blank" class="btn">LinkedIn Profile</a>
             </div>
-            <p><strong>Desafío:</strong> Pronosticar la demanda de taxis en aeropuertos para optimizar la logística de conductores en horas pico.</p>
-            <div class="results">
-                <strong>Logro:</strong> Implementé un modelo con remuestreo horario logrando un RECM de 42.0 en el conjunto de prueba, facilitando la toma de decisiones operativa.
-            </div>
-            <a href="https://gist.github.com/KiraraMarlene/a28fb1ce1746bb13a057fe24cf7ff85e" class="btn" target="_blank">Ver Código en Gist →</a>
-        </div>
+        </header>
 
-        <div class="project-card">
-            <span class="project-title">Modelado de Valuación: Rusty Bargain</span>
-            <div class="tech-tags">
-                <span class="tech-tag">Regresión</span><span class="tech-tag">Gradient Boosting</span><span class="tech-tag">Scikit-learn</span>
+        <section class="uvp-grid">
+            <div class="glass-card uvp-card">
+                <h3>⚙️ Liderazgo Operativo</h3>
+                <p>Más de 15 años escalando operaciones globales en TTEC CX SOLUTIONS, asegurando eficiencia y entrega en entornos de alta presión.</p>
             </div>
-            <p><strong>Desafío:</strong> Desarrollar un sistema de tasación automática de vehículos basado en especificaciones técnicas y kilometraje.</p>
-            <div class="results">
-                <strong>Logro:</strong> Comparé modelos de CatBoost y LightGBM para equilibrar precisión y tiempo de entrenamiento, optimizando la experiencia del usuario final.
+            <div class="glass-card uvp-card">
+                <h3>🧠 Ciencia de Datos</h3>
+                <p>Modelado predictivo, automatización y análisis complejo de datos. Convirtiendo ruido estadístico en decisiones de negocio.</p>
             </div>
-            <a href="https://gist.github.com/KiraraMarlene/1a151c641f5a8919cca691557ed4e497" class="btn" target="_blank">Ver Código en Gist →</a>
-        </div>
+            <div class="glass-card uvp-card">
+                <h3>📈 Visión Financiera</h3>
+                <p>Egresado en Gestión Financiera y fundador de Mijares Gestoría. Analizo los datos siempre con el ROI y el P&L en mente.</p>
+            </div>
+        </section>
 
-        <div class="project-card">
-            <span class="project-title">Seguridad y ML: Sure Tomorrow</span>
-            <div class="tech-tags">
-                <span class="tech-tag">Álgebra Lineal</span><span class="tech-tag">Ofuscación de Datos</span><span class="tech-tag">Privacidad</span>
-            </div>
-            <p><strong>Desafío:</strong> Proteger la privacidad de los asegurados sin degradar la calidad de los modelos predictivos.</p>
-            <div class="results">
-                <strong>Logro:</strong> Desarrollé un algoritmo de enmascaramiento matricial que protege la identidad de los clientes manteniendo la integridad de las predicciones de regresión.
-            </div>
-            <a href="https://gist.github.com/KiraraMarlene/2514f69a2f16c70f454d66382cba1294" class="btn" target="_blank">Ver Código en Gist →</a>
-        </div>
-    </section>
+        <section>
+            <h2>Casos de Estudio Interactivos</h2>
 
-    <section class="contact-box">
-        <h2>Contacto Profesional</h2>
-        <p>¿Interesado en una colaboración o consultoría financiera basada en datos?</p>
-        <p>📧 <a href="mailto:danielfmijares@gmail.com">danielfmijares@gmail.com</a></p>
-        <p>📚 Autor de <strong>"Más Allá de la Tanda"</strong></p>
-    </section>
+            <div class="glass-card project-card">
+                <div class="project-visual"></div>
+                
+                <div class="project-content">
+                    <span class="project-title">Optimización Logística: Sweet Lift Taxi</span>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Time Series</span><span class="tech-tag">LightGBM</span><span class="tech-tag">Python</span>
+                    </div>
+                    <p><strong>El Problema:</strong> Fluctuaciones impredecibles en la demanda de taxis en aeropuertos, generando tiempos muertos inaceptables.</p>
+                    <div class="impact-box">
+                        <strong>Impacto:</strong> Modelo predictivo con remuestreo horario que anticipa picos de demanda (RECM 42.0), permitiendo despliegue proactivo de la flota.
+                    </div>
+                    <a href="https://gist.github.com/KiraraMarlene/a28fb1ce1746bb13a057fe24cf7ff85e" class="btn" target="_blank">Inspeccionar Código →</a>
+                </div>
+            </div>
 
-    <footer style="text-align: center; margin-top: 50px; color: #888; font-size: 0.9rem;">
-        <p>© 2026 Daniel Fernando Mijares Ponce | Ciudad de México</p>
-    </footer>
+            <div class="glass-card project-card">
+                <div class="project-visual visual-2"></div>
+                <div class="project-content">
+                    <span class="project-title">Tasación Automatizada: Rusty Bargain</span>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Gradient Boosting</span><span class="tech-tag">CatBoost</span><span class="tech-tag">Scikit-learn</span>
+                    </div>
+                    <p><strong>El Problema:</strong> Valuación manual de vehículos lenta y subjetiva, creando cuellos de botella en adquisiciones.</p>
+                    <div class="impact-box">
+                        <strong>Impacto:</strong> Sistema automatizado que equilibra velocidad de inferencia y precisión para entregar valuaciones financieras instantáneas.
+                    </div>
+                    <a href="https://gist.github.com/KiraraMarlene/1a151c641f5a8919cca691557ed4e497" class="btn" target="_blank">Inspeccionar Código →</a>
+                </div>
+            </div>
+
+            <div class="glass-card project-card">
+                <div class="project-visual visual-3"></div>
+                <div class="project-content">
+                    <span class="project-title">Criptografía en ML: Sure Tomorrow</span>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Álgebra Lineal</span><span class="tech-tag">Data Privacy</span>
+                    </div>
+                    <p><strong>El Problema:</strong> Necesidad de entrenar modelos predictivos sin exponer datos personales financieros a violaciones de seguridad.</p>
+                    <div class="impact-box">
+                        <strong>Impacto:</strong> Algoritmo de ofuscación matricial. Datos ilegibles para humanos, pero matemáticamente perfectos para la IA.
+                    </div>
+                    <a href="https://gist.github.com/KiraraMarlene/2514f69a2f16c70f454d66382cba1294" class="btn" target="_blank">Inspeccionar Código →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="glass-card author-section">
+            <div class="author-content">
+                <h3>Reparando el "Balde Agujereado"</h3>
+                <p>No importa qué tan avanzada sea la IA de una empresa si sus bases financieras están rotas. Como autor de <strong>"Más Allá de la Tanda"</strong>, aplico la misma filosofía a los negocios que a las finanzas personales: detectar fugas, optimizar recursos y escalar de manera inteligente.</p>
+                <div class="btn-group">
+                    <a href="https://a.co/d/0bPQi97X" target="_blank" class="btn btn-primary">Ver Libro en Amazon</a>
+                </div>
+            </div>
+            <div class="book-visual"></div>
+        </section>
+
+        <footer>
+            <p>© 2026 Daniel Fernando Mijares Ponce | Ciudad de México</p>
+        </footer>
+    </div>
 
 </body>
 </html>
