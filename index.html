@@ -107,4 +107,83 @@
         
         /* Buttons */
         .btn-group { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px; align-items: center; }
-        .btn
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 28px; background: transparent; color: white; text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 0.95rem; transition: all 0.3s; border: 1px solid rgba(255,255,255,0.3); cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
+        .btn-primary { background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%); border: none; color: #000; font-weight: 800; box-shadow: 0 10px 20px rgba(0, 242, 254, 0.3); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(0, 242, 254, 0.5); }
+        .btn:hover:not(.btn-primary) { background: rgba(255,255,255,0.1); border-color: #fff; transform: translateY(-3px); }
+
+        .email-link { color: var(--text-muted); font-size: 1.1rem; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.3s; margin-left: 10px;}
+        .email-link:hover { color: var(--primary); }
+
+        /* Author Section */
+        .author-section { margin-top: 80px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
+        .author-content { flex: 1; min-width: 300px; }
+        .author-content h3 { font-size: 2.2rem; margin-bottom: 15px; background: -webkit-linear-gradient(0deg, #f59e0b, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .book-cover-img { max-width: 250px; height: auto; border-radius: 4px; box-shadow: -15px 15px 35px rgba(0,0,0,0.8); transform: perspective(800px) rotateY(-15deg); transition: transform 0.4s ease; }
+        .book-cover-img:hover { transform: perspective(800px) rotateY(0deg); }
+
+        footer { text-align: center; margin-top: 100px; padding-top: 40px; border-top: 1px solid var(--glass-border); color: var(--text-muted); }
+    </style>
+</head>
+<body>
+
+    <video autoplay loop muted playsinline class="video-bg" poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop">
+        <source src="Solución_de_Video_Oscuro_en_Página_Web.mp4" type="video/mp4">
+    </video>
+    <div class="bg-overlay"></div>
+
+    <div class="container">
+        
+        <header>
+            <h1>Estratega de Datos <span>& Operaciones</span></h1>
+            <p class="hero-subtitle">Soy un Analista de Datos con un enfoque orientado a resultados, respaldado por una sólida trayectoria en liderazgo corporativo y consultoría independiente. Mi valor agregado radica en mi capacidad para tender un puente entre la complejidad técnica de los datos y las necesidades estratégicas del negocio. No solo analizo números; traduzco la información en estrategias accionables que optimizan procesos, mejoran los KPIs y fundamentan la toma de decisiones ejecutivas.</p>
+            <div class="btn-group">
+                <a href="https://www.linkedin.com/in/danielmijaresponce/" target="_blank" class="btn btn-primary">LinkedIn</a>
+                <a href="https://github.com/DanielfMijares" target="_blank" class="btn">GitHub</a>
+                <a href="mailto:danielfmijares@gmail.com" class="email-link">📧 danielfmijares@gmail.com</a>
+            </div>
+        </header>
+
+        <section>
+            <h2>Caja de Herramientas Tecnológicas</h2>
+            <p class="section-desc">Mi enfoque técnico se centra en el ciclo completo del dato, desde la extracción hasta la visualización y predicción:</p>
+            
+            <div class="skills-grid">
+                <div class="skill-item glass-card">
+                    <h4>🐍 Python</h4>
+                    <p>Desarrollo de scripts para automatización de procesos, análisis exploratorio profundo (EDA) y limpieza de grandes conjuntos de datos.</p>
+                </div>
+                <div class="skill-item glass-card">
+                    <h4>🗄️ SQL</h4>
+                    <p>Consulta ágil, extracción y transformación de datos relacionales para asegurar la integridad y disponibilidad de la información.</p>
+                </div>
+                <div class="skill-item glass-card">
+                    <h4>📊 Visualización (Power BI & Tableau)</h4>
+                    <p>Diseño de dashboards interactivos y reportes ejecutivos intuitivos que cuentan la historia detrás de los datos.</p>
+                </div>
+                <div class="skill-item glass-card">
+                    <h4>🤖 Machine Learning</h4>
+                    <p>Implementación de modelos predictivos, algoritmos de clasificación y regresión para anticipar tendencias de mercado.</p>
+                </div>
+                <div class="skill-item glass-card">
+                    <h4>📗 Excel Avanzado</h4>
+                    <p>Modelado financiero, uso de macros y análisis tradicional para soluciones rápidas y reportes directos.</p>
+                </div>
+                <div class="skill-item glass-card">
+                    <h4>🌐 HTML</h4>
+                    <p>Comprensión de la estructura web, facilitando la extracción de datos mediante web scraping y la integración de reportes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Experiencia Estratégica y Operativa</h2>
+            <p class="section-desc">Mi formación en Data Science se complementa directamente con mi experiencia en el mundo real:</p>
+            
+            <div class="uvp-grid">
+                <div class="glass-card uvp-card">
+                    <h3>🏢 Liderazgo Operativo a Gran Escala</h3>
+                    <p>Como Senior Service Delivery Manager en TTEC (Dic. 2022 - Sep. 2025), lideré operaciones complejas donde la gestión del rendimiento y la toma de decisiones basadas en datos empíricos fueron cruciales para el éxito operativo. Esta etapa me otorgó una visión empresarial aguda para entender qué métricas realmente importan a nivel directivo.</p>
+                </div>
+                <div
