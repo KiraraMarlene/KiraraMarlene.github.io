@@ -120,6 +120,7 @@
         .author-content { flex: 1; min-width: 300px; }
         .author-content h3 { font-size: 2.2rem; margin-bottom: 15px; background: -webkit-linear-gradient(0deg, #f59e0b, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
+        /* ESTA CLASE CONTROLA LA IMAGEN DEL LIBRO */
         .book-cover-img { max-width: 250px; height: auto; border-radius: 4px; box-shadow: -15px 15px 35px rgba(0,0,0,0.8); transform: perspective(800px) rotateY(-15deg); transition: transform 0.4s ease; }
         .book-cover-img:hover { transform: perspective(800px) rotateY(0deg); }
 
@@ -186,4 +187,84 @@
                     <h3>🏢 Liderazgo Operativo a Gran Escala</h3>
                     <p>Como Senior Service Delivery Manager en TTEC (Dic. 2022 - Sep. 2025), lideré operaciones complejas donde la gestión del rendimiento y la toma de decisiones basadas en datos empíricos fueron cruciales para el éxito operativo. Esta etapa me otorgó una visión empresarial aguda para entender qué métricas realmente importan a nivel directivo.</p>
                 </div>
-                <div
+                <div class="glass-card uvp-card">
+                    <h3>⚖️ Consultoría y Resolución de Problemas</h3>
+                    <p>Como Fundador y Consultor Freelance en Mijares Gestoría Integral, desarrollo habilidades de análisis meticuloso, estructuración de información crítica y resolución de problemas legales y administrativos. Esta experiencia forjó mi atención al detalle y mi capacidad para auditar información con precisión milimétrica.</p>
+                </div>
+                <div class="glass-card uvp-card" style="border-color: rgba(16, 185, 129, 0.4);">
+                    <h3 style="color: var(--accent);">🎯 Mi Objetivo</h3>
+                    <p>Ayudar a las organizaciones a transformar la incertidumbre en estrategias claras a través del poder de los datos, el Machine Learning y una visión de negocio comprobada.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 style="text-align: center; margin-top: 60px;">Portafolio Técnico y Casos de Estudio</h2>
+
+            <div class="glass-card project-card">
+                <div class="project-visual"></div>
+                <div class="project-content">
+                    <span class="project-title">1. Tasación Automatizada: Rusty Bargain</span>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Gradient Boosting</span><span class="tech-tag">CatBoost</span><span class="tech-tag">Scikit-learn</span>
+                    </div>
+                    <p><strong>El Problema:</strong> La valuación manual de vehículos es un proceso lento y subjetivo, creando cuellos de botella en la adquisición de inventario.</p>
+                    <div class="impact-box">
+                        <strong>Impacto:</strong> Implementación de un sistema automatizado de tasación. Se compararon modelos para equilibrar la velocidad de inferencia y la precisión, entregando valuaciones instantáneas al usuario final.
+                    </div>
+                    <a href="https://gist.github.com/DanielfMijares/1a151c641f5a8919cca691557ed4e497" class="btn" target="_blank">Revisar Algoritmo en GitHub →</a>
+                </div>
+            </div>
+
+            <div class="glass-card project-card">
+                <div class="project-visual visual-2"></div>
+                <div class="project-content">
+                    <span class="project-title">2. Visión Computacional y Redes Neuronales (CNN)</span>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Deep Learning</span><span class="tech-tag">CNN</span><span class="tech-tag">Data Augmentation</span>
+                    </div>
+                    <p><strong>El Problema:</strong> Construir un modelo de reconocimiento de imágenes robusto enfrentando un fuerte sesgo de distribución (concentración de datos en el rango de 20-40 años) y variabilidad en la iluminación y rotación de los sujetos.</p>
+                    <div class="impact-box">
+                        <strong>Impacto:</strong> Aplicación de análisis exploratorio (EDA) estratégico para dictar el preprocesamiento. Implementación de aumentación de datos y scripts optimizados para entrenamiento en GPU, maximizando la capacidad de extracción de características del modelo.
+                    </div>
+                    <a href="https://gist.github.com/DanielfMijares/2514f69a2f16c70f454d66382cba1294" class="btn" target="_blank">Revisar Algoritmo en GitHub →</a>
+                </div>
+            </div>
+
+            <div class="glass-card project-card">
+                <div class="project-visual visual-3"></div>
+                <div class="project-content">
+                    <span class="project-title">3. Predicción de Churn: Interconnect</span>
+                    <div class="tech-tags">
+                        <span class="tech-tag">CatBoost</span><span class="tech-tag">Clasificación Binaria</span><span class="tech-tag">Machine Learning</span>
+                    </div>
+                    <p><strong>El Problema:</strong> Identificar y clasificar correctamente a los clientes que están a punto de cancelar sus servicios, para que la empresa pueda retenerlos proactivamente antes de perderlos.</p>
+                    <div class="impact-box">
+                        <strong>Impacto:</strong> Desarrollo de un modelo predictivo utilizando <strong>CatBoost</strong> que gestiona categorías de forma nativa para reducir el sesgo de la información. El modelo alcanzó un <strong>AUC-ROC de 0.9102</strong>, superando por un margen sólido del 3% la meta de excelencia operativa del proyecto (0.88), asegurando la máxima puntuación de calidad y precisión.
+                    </div>
+                    <a href="https://gist.github.com/DanielfMijares/a28fb1ce1746bb13a057fe24cf7ff85e" class="btn" target="_blank">Revisar Algoritmo en GitHub →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="glass-card author-section">
+            <div class="author-content">
+                <h3>Reparando el "Balde Agujereado"</h3>
+                <p>No importa qué tan avanzada sea la Inteligencia Artificial de una empresa si sus bases operativas y financieras están rotas. Como autor de <strong>"Más Allá de la Tanda"</strong>, aplico la misma filosofía a los negocios que a las finanzas personales: detectar fugas, optimizar recursos y escalar de manera inteligente.</p>
+                <div class="btn-group">
+                    <a href="https://a.co/d/0bPQi97X" target="_blank" class="btn btn-primary">Adquirir en Amazon Kindle</a>
+                </div>
+            </div>
+            
+            <div>
+                <img src="https://m.media-amazon.com/images/I/71VjSAEckDL._SY466_.jpg" alt="Portada Más Allá de la Tanda" class="book-cover-img">
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Daniel Fernando Mijares Ponce | Ciudad de México</p>
+        </footer>
+    </div>
+
+</body>
+</html>
